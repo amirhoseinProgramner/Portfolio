@@ -1,5 +1,5 @@
-import { ExternalLink, Github, X } from 'lucide-react';
-import { useState } from 'react';
+import { ExternalLink, Github, X } from "lucide-react";
+import { useState } from "react";
 
 interface Project {
   id: number;
@@ -15,63 +15,80 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: '3D Portfolio Site',
-    description: 'An immersive portfolio website with advanced 3D animations and interactive elements.',
-    image: 'https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800',
-    tags: ['React', 'Three.js', 'WebGL'],
-    demoUrl: '#',
-    githubUrl: '#',
-    longDescription: 'A cutting-edge portfolio website featuring real-time 3D graphics, particle systems, and immersive user interactions. Built with modern web technologies to showcase creative development skills.',
+    title: "وبسایت پورتفولیو سه‌بعدی",
+    description:
+      "یک وبسایت پورتفولیو جذاب با انیمیشن‌های پیشرفته سه‌بعدی و المان‌های تعاملی.",
+    image:
+      "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
+    tags: ["React", "Three.js", "WebGL"],
+    demoUrl: "#",
+    githubUrl: "#",
+    longDescription:
+      "یک وبسایت پورتفولیو پیشرفته با گرافیک سه‌بعدی در زمان واقعی، سیستم ذرات و تعاملات کاربری جذاب. با استفاده از فناوری‌های مدرن وب برای نمایش مهارت‌های توسعه خلاقانه ساخته شده است.",
   },
   {
     id: 2,
-    title: 'E-Commerce Platform',
-    description: 'Modern e-commerce solution with seamless checkout and inventory management.',
-    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-    tags: ['Next.js', 'TypeScript', 'Stripe'],
-    demoUrl: '#',
-    githubUrl: '#',
-    longDescription: 'Full-featured e-commerce platform with real-time inventory tracking, secure payment processing, and an intuitive admin dashboard. Optimized for performance and conversion.',
+    title: "پلتفرم فروشگاه آنلاین",
+    description:
+      "راهکار مدرن تجارت الکترونیک با فرآیند پرداخت روان و مدیریت موجودی.",
+    image:
+      "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
+    tags: ["Next.js", "TypeScript", "Stripe"],
+    demoUrl: "#",
+    githubUrl: "#",
+    longDescription:
+      "پلتفرم کامل فروشگاه آنلاین با پیگیری موجودی در زمان واقعی، پردازش امن پرداخت و داشبورد مدیریت بصری. بهینه شده برای عملکرد و نرخ تبدیل بالا.",
   },
   {
     id: 3,
-    title: 'AI Chat Application',
-    description: 'Real-time chat app powered by AI with intelligent responses and natural conversations.',
-    image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
-    tags: ['React', 'Node.js', 'OpenAI'],
-    demoUrl: '#',
-    githubUrl: '#',
-    longDescription: 'An intelligent chat application leveraging AI to provide context-aware responses. Features include real-time messaging, conversation history, and customizable AI personalities.',
+    title: "اپلیکیشن چت هوش مصنوعی",
+    description:
+      "اپلیکیشن چت در زمان واقعی با هوش مصنوعی، پاسخ‌های هوشمند و گفتگوهای طبیعی.",
+    image:
+      "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
+    tags: ["React", "Node.js", "OpenAI"],
+    demoUrl: "#",
+    githubUrl: "#",
+    longDescription:
+      "اپلیکیشن چت هوشمند با استفاده از هوش مصنوعی برای ارائه پاسخ‌های مبتنی بر محتوا. ویژگی‌ها شامل پیام‌رسانی در زمان واقعی، تاریخچه گفتگو و شخصیت‌های قابل تنظیم AI است.",
   },
   {
     id: 4,
-    title: 'Task Management System',
-    description: 'Collaborative project management tool with team features and analytics.',
-    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
-    tags: ['Vue.js', 'Firebase', 'Tailwind'],
-    demoUrl: '#',
-    githubUrl: '#',
-    longDescription: 'Comprehensive task management platform for teams. Includes Kanban boards, Gantt charts, time tracking, and advanced reporting features to boost productivity.',
+    title: "سیستم مدیریت وظایف",
+    description:
+      "ابزار مدیریت پروژه مشارکتی با ویژگی‌های تیمی و تحلیل‌های پیشرفته.",
+    image:
+      "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800",
+    tags: ["Vue.js", "Firebase", "Tailwind"],
+    demoUrl: "#",
+    githubUrl: "#",
+    longDescription:
+      "پلتفرم مدیریت وظایف جامع برای تیم‌ها. شامل تخته کانبان، نمودار گانت، پیگیری زمان و گزارش‌دهی پیشرفته برای افزایش بهره‌وری.",
   },
   {
     id: 5,
-    title: 'Fitness Tracker App',
-    description: 'Mobile-first fitness application with workout plans and progress tracking.',
-    image: 'https://images.pexels.com/photos/4162481/pexels-photo-4162481.jpeg?auto=compress&cs=tinysrgb&w=800',
-    tags: ['React Native', 'Redux', 'Charts'],
-    demoUrl: '#',
-    githubUrl: '#',
-    longDescription: 'A comprehensive fitness tracking solution with personalized workout plans, nutrition tracking, and detailed progress analytics. Features social sharing and community challenges.',
+    title: "اپلیکیشن ردیاب تناسب اندام",
+    description: "اپلیکیشن موبایل با برنامه‌های تمرینی و ردیابی پیشرفت.",
+    image:
+      "https://images.pexels.com/photos/4162481/pexels-photo-4162481.jpeg?auto=compress&cs=tinysrgb&w=800",
+    tags: ["React Native", "Redux", "Charts"],
+    demoUrl: "#",
+    githubUrl: "#",
+    longDescription:
+      "راهکار کامل ردیابی تناسب اندام با برنامه‌های تمرینی شخصی، ردیابی تغذیه و تحلیل پیشرفت دقیق. شامل اشتراک‌گذاری اجتماعی و چالش‌های جامعه‌ای.",
   },
   {
     id: 6,
-    title: 'Weather Dashboard',
-    description: 'Beautiful weather app with forecasts, maps, and real-time weather alerts.',
-    image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
-    tags: ['React', 'API', 'Maps'],
-    demoUrl: '#',
-    githubUrl: '#',
-    longDescription: 'Elegant weather dashboard providing detailed forecasts, interactive maps, and severe weather alerts. Features location-based recommendations and historical weather data visualization.',
+    title: "داشبورد آب و هوا",
+    description:
+      "اپلیکیشن زیبا با پیش‌بینی‌ها، نقشه‌ها و هشدارهای آب و هوای لحظه‌ای.",
+    image:
+      "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
+    tags: ["React", "API", "Maps"],
+    demoUrl: "#",
+    githubUrl: "#",
+    longDescription:
+      "داشبورد آب و هوا با پیش‌بینی‌های دقیق، نقشه‌های تعاملی و هشدارهای شدید. شامل پیشنهادات مبتنی بر موقعیت و مصورسازی داده‌های تاریخی آب و هوا.",
   },
 ];
 
@@ -79,14 +96,14 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white pt-24 pb-16 px-6">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white pt-24 pb-16 px-6 shabnam-font">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 text-glow mb-4">
-            Featured Projects
+            پروژه‌های منتخب
           </h1>
           <p className="text-xl text-gray-400">
-            Explore my latest work and creative experiments
+            آخرین کارها و تجربیات خلاقانه من را کاوش کنید
           </p>
         </div>
 
@@ -133,7 +150,7 @@ export default function Projects() {
                     onClick={(e) => e.stopPropagation()}
                   >
                     <ExternalLink size={16} />
-                    Demo
+                    مشاهده دمو
                   </a>
                   <a
                     href={project.githubUrl}
@@ -141,7 +158,7 @@ export default function Projects() {
                     onClick={(e) => e.stopPropagation()}
                   >
                     <Github size={16} />
-                    Code
+                    مشاهده کد
                   </a>
                 </div>
               </div>
@@ -201,14 +218,14 @@ export default function Projects() {
                   className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all glow-effect"
                 >
                   <ExternalLink size={20} />
-                  View Demo
+                  مشاهده دمو
                 </a>
                 <a
                   href={selectedProject.githubUrl}
                   className="flex-1 flex items-center justify-center gap-2 px-6 py-3 border-2 border-blue-400 rounded-lg font-semibold hover:bg-blue-400/10 transition-all"
                 >
                   <Github size={20} />
-                  View Code
+                  مشاهده کد
                 </a>
               </div>
             </div>

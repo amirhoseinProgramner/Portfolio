@@ -1,18 +1,21 @@
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 interface NavigationProps {
   currentPage: string;
   onNavigate: (page: string) => void;
 }
 
-export default function Navigation({ currentPage, onNavigate }: NavigationProps) {
+export default function Navigation({
+  currentPage,
+  onNavigate,
+}: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', id: 'home' },
-    { name: 'Projects', id: 'projects' },
-    { name: 'Contact', id: 'contact' },
+    { name: "خانه", id: "home" },
+    { name: "پروژه‌ها", id: "projects" },
+    { name: "تماس", id: "contact" },
   ];
 
   const handleNavigate = (page: string) => {
@@ -21,10 +24,13 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-lg border-b border-gray-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-lg border-b border-gray-800 shabnam-font">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-blue-400 text-glow cursor-pointer" onClick={() => handleNavigate('home')}>
+          <div
+            className="text-2xl font-bold text-blue-400 text-glow cursor-pointer"
+            onClick={() => handleNavigate("home")}
+          >
             Portfolio
           </div>
 
@@ -35,8 +41,8 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
                 onClick={() => handleNavigate(item.id)}
                 className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
                   currentPage === item.id
-                    ? 'text-blue-400 text-glow'
-                    : 'text-gray-300 hover:text-blue-400'
+                    ? "text-blue-400 text-glow"
+                    : "text-gray-300 hover:text-blue-400"
                 }`}
               >
                 {item.name}
@@ -63,8 +69,8 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
                 onClick={() => handleNavigate(item.id)}
                 className={`block w-full text-left px-4 py-3 rounded-lg transition-all duration-300 ${
                   currentPage === item.id
-                    ? 'bg-blue-500/20 text-blue-400 border border-blue-400/30'
-                    : 'text-gray-300 hover:bg-gray-800/50'
+                    ? "bg-blue-500/20 text-blue-400 border border-blue-400/30"
+                    : "text-gray-300 hover:bg-gray-800/50"
                 }`}
               >
                 {item.name}
