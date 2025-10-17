@@ -61,7 +61,7 @@ export default function Contact() {
                 <Mail className="text-blue-400" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-2">ایمیل</h3>
-              <p className="text-gray-400">contact@johndoe.com</p>
+              <p className="text-gray-400">amirhosseinfiroozi84@gmail.com</p>
             </div>
 
             <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-400/50 transition-all duration-300 group">
@@ -69,7 +69,7 @@ export default function Contact() {
                 <Phone className="text-blue-400" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-2">تلفن</h3>
-              <p className="text-gray-400">+1 (555) 123-4567</p>
+              <p className="text-gray-400">09939044953</p>
             </div>
 
             <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-400/50 transition-all duration-300 group">
@@ -77,7 +77,9 @@ export default function Contact() {
                 <MapPin className="text-blue-400" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-2">مکان</h3>
-              <p className="text-gray-400">سان فرانسیسکو، کالیفرنیا</p>
+              <p className="text-gray-400">
+                خیابان ولیعصر خیابان مختاری پلاک 2
+              </p>
             </div>
           </div>
 
