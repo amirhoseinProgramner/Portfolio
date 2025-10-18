@@ -1,11 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://cdn.fontcdn.ir/Font/Shabnam/Shabnam.css");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: 'Inter', sans-serif;
+}
+
 body {
   overflow-x: hidden;
+}
+
+.shabnam-font {
+  font-family: "Shabnam", sans-serif;
+}
+
+.shabnam {
+  font-family: "Shabnam", sans-serif;
 }
 
 @keyframes float {
@@ -29,12 +42,27 @@ body {
   }
 }
 
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-spotlight {
+  animation: spotlight 2s ease 0.75s 1 forwards;
 }
 
 .perspective-1000 {
@@ -67,9 +95,4 @@ body {
 .card-3d:hover {
   transform: translateZ(20px) rotateX(5deg) rotateY(5deg);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(59, 130, 246, 0.3);
-}
-@import url("https://cdn.fontcdn.ir/Font/Shabnam/Shabnam.css");
-
-body {
-  font-family: "Shabnam", sans-serif;
 }

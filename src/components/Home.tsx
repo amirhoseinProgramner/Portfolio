@@ -1,4 +1,7 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { SplineScene } from "./ui/splite";
+import { Card } from "./ui/card";
+import { Spotlight } from "./ui/spotlight";
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -113,6 +116,34 @@ export default function Home({ onNavigate }: HomeProps) {
         <div className="w-6 h-10 border-2 border-blue-400/50 rounded-full flex items-start justify-center p-2">
           <div className="w-1.5 h-3 bg-blue-400 rounded-full"></div>
         </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
+        <Card className="w-full h-[500px] bg-black/[0.96] relative overflow-hidden border-gray-700">
+          <Spotlight
+            className="-top-40 left-0 md:left-60 md:-top-20"
+            fill="white"
+          />
+
+          <div className="flex flex-col md:flex-row h-full">
+            <div className="flex-1 p-8 relative z-10 flex flex-col justify-center">
+              <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                Interactive 3D
+              </h2>
+              <p className="mt-4 text-neutral-300 max-w-lg">
+                Bring your UI to life with beautiful 3D scenes. Create immersive experiences
+                that capture attention and enhance your design.
+              </p>
+            </div>
+
+            <div className="flex-1 relative">
+              <SplineScene
+                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+        </Card>
       </div>
     </div>
   );
