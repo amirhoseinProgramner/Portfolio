@@ -34,7 +34,8 @@ export default function Navigation({
             Portfolio
           </div>
 
-          <div className="hidden md:flex space-x-8">
+          {/* تغییر از md به lg */}
+          <div className="hidden lg:flex space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -53,16 +54,18 @@ export default function Navigation({
             ))}
           </div>
 
+          {/* تغییر از md به lg */}
           <button
-            className="md:hidden text-gray-300 hover:text-blue-400 transition-colors"
+            className="lg:hidden text-gray-300 hover:text-blue-400 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
+        {/* تغییر از md به lg */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-2 animate-fade-in">
+          <div className="lg:hidden mt-4 pb-4 space-y-2 animate-fade-in">
             {navItems.map((item) => (
               <button
                 key={item.id}

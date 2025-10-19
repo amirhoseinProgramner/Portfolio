@@ -1,7 +1,5 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { SplineScene } from "./ui/splite";
-import { Card } from "./ui/card";
-import { Spotlight } from "./ui/spotlight";
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -9,142 +7,101 @@ interface HomeProps {
 
 export default function Home({ onNavigate }: HomeProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden shabnam-font">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
-        <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "2s" }}
-        ></div>
-        <div
-          className="absolute top-1/2 left-1/2 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "4s" }}
-        ></div>
-      </div>
+    <>
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden font-shabnam">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-400/5 rounded-full blur-3xl"></div>
+        </div>
 
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-20 h-20 border border-blue-400/20 rounded-lg transform rotate-45 animate-float"></div>
-        <div
-          className="absolute top-40 right-20 w-16 h-16 border border-blue-400/20 rounded-full animate-float"
-          style={{ animationDelay: "1s" }}
-        ></div>
-        <div
-          className="absolute bottom-32 left-1/4 w-24 h-24 border border-blue-400/20 animate-float"
-          style={{ animationDelay: "3s" }}
-        ></div>
-        <div
-          className="absolute bottom-20 right-1/3 w-12 h-12 border border-blue-400/20 rounded-lg animate-float"
-          style={{ animationDelay: "2.5s" }}
-        ></div>
-      </div>
+        <div className="relative z-10 min-h-screen flex items-center pt-16 lg:pt-0">
+          <div className="max-w-7xl mx-auto w-full px-4 sm:px-6">
+            {/* تغییر اصلی اینجاست - از lg به md */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-center">
+              {/* تغییر از lg به md */}
+              <div className="md:col-span-6 xl:col-span-5 md:pr-8 mt-20 lg:mt-0">
+                <div className="text-right space-y-6">
+                  <div className="space-y-4">
+                    <div className="space-y-3">
+                      <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 leading-tight">
+                        امیرحسین
+                        <br />
+                        فیروزی
+                      </h1>
+                      <div className="h-1 w-24 ml-auto bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+                    </div>
 
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
-        <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
-          <div className="space-y-4">
-            <h1 className="shabnam text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-glow">
-              امیرحسین فیروزی
-            </h1>
-            <div className="h-1 w-32 mx-auto bg-gradient-to-r from-transparent via-blue-400 to-transparent glow-effect"></div>
-          </div>
+                    <p className="text-lg sm:text-xl md:text-2xl font-light text-gray-300">
+                      طراح و برنامه‌نویس فول‌استک
+                    </p>
+                  </div>
 
-          <p className="text-2xl md:text-4xl font-light text-gray-300">
-            طراح و برنامه‌نویس فول‌استک
-          </p>
+                  <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-md ml-auto">
+                    خلق تجربه‌های دیجیتالی چشمگیر با استفاده از فناوری‌های مدرن.
+                    متخصص در طراحی وب سه‌بعدی و توسعه رابط‌های کاربری پیشرفته.
+                  </p>
 
-          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            خلق تجربه‌های دیجیتالی چشمگیر با استفاده از فناوری‌های مدرن. متخصص
-            در طراحی وب سه‌بعدی، انیمیشن‌های تعاملی و توسعه رابط‌های کاربری
-            پیشرفته.
-          </p>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-end pt-4">
+                    <button
+                      onClick={() => onNavigate("projects")}
+                      className="group relative px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg font-semibold overflow-hidden transition-all duration-200 hover:shadow-lg hover:scale-105 min-w-[160px]"
+                    >
+                      <span className="relative z-10 flex items-center gap-2 justify-center">
+                        مشاهده پروژه‌ها
+                        <ArrowRight
+                          className="group-hover:translate-x-1 transition-transform"
+                          size={18}
+                        />
+                      </span>
+                    </button>
 
-          <div className="flex flex-wrap gap-6 justify-center pt-8">
-            <button
-              onClick={() => onNavigate("projects")}
-              className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 glow-effect"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                مشاهده پروژه‌ها
-                <ArrowRight
-                  className="group-hover:translate-x-1 transition-transform"
-                  size={20}
-                />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </button>
+                    <button
+                      onClick={() => onNavigate("contact")}
+                      className="group px-6 py-3 border border-blue-400/60 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-400/10 hover:shadow-lg min-w-[160px]"
+                    >
+                      تماس با من
+                    </button>
+                  </div>
 
-            <button
-              onClick={() => onNavigate("contact")}
-              className="group px-8 py-4 border-2 border-blue-400 rounded-lg font-semibold transition-all duration-300 hover:bg-blue-400/10 hover:shadow-lg hover:scale-105"
-            >
-              تماس با من
-            </button>
-          </div>
+                  <div className="flex gap-3 justify-end pt-6">
+                    {[
+                      {
+                        icon: Github,
+                        href: "https://github.com/amirhoseinProgramner",
+                      },
+                      { icon: Linkedin, href: "#" },
+                      { icon: Mail, href: "amirhosseinfiroozi84@gmail.com" },
+                    ].map((SocialIcon, index) => (
+                      <a
+                        key={index}
+                        href={SocialIcon.href}
+                        className="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-800/30 border border-gray-700/50 hover:border-blue-400 hover:bg-blue-400/10 transition-all duration-200 hover:scale-110"
+                      >
+                        <SocialIcon.icon
+                          className="text-gray-400 hover:text-blue-400 transition-colors"
+                          size={18}
+                        />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
-          <div className="flex gap-6 justify-center pt-12">
-            <a
-              href="#"
-              className="w-12 h-12 flex items-center justify-center rounded-lg bg-gray-800/50 border border-gray-700 hover:border-blue-400 hover:bg-blue-400/10 transition-all duration-300 hover:scale-110 group"
-            >
-              <Github
-                className="text-gray-400 group-hover:text-blue-400 transition-colors"
-                size={20}
-              />
-            </a>
-            <a
-              href="#"
-              className="w-12 h-12 flex items-center justify-center rounded-lg bg-gray-800/50 border border-gray-700 hover:border-blue-400 hover:bg-blue-400/10 transition-all duration-300 hover:scale-110 group"
-            >
-              <Linkedin
-                className="text-gray-400 group-hover:text-blue-400 transition-colors"
-                size={20}
-              />
-            </a>
-            <a
-              href="#"
-              className="w-12 h-12 flex items-center justify-center rounded-lg bg-gray-800/50 border border-gray-700 hover:border-blue-400 hover:bg-blue-400/10 transition-all duration-300 hover:scale-110 group"
-            >
-              <Mail
-                className="text-gray-400 group-hover:text-blue-400 transition-colors"
-                size={20}
-              />
-            </a>
+              {/* تغییر از lg به md و اضافه کردن ارتفاع برای md */}
+              <div className="md:col-span-6 xl:col-span-7 relative h-[400px] sm:h-[500px] md:h-[450px] lg:h-[550px] xl:h-[600px]">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative w-full h-full max-w-2xl mx-auto rounded-lg overflow-hidden">
+                    <SplineScene
+                      scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-blue-400/50 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-blue-400 rounded-full"></div>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
-        <Card className="w-full h-[500px] bg-black/[0.96] relative overflow-hidden border-gray-700">
-          <Spotlight
-            className="-top-40 left-0 md:left-60 md:-top-20"
-            fill="white"
-          />
-
-          <div className="flex flex-col md:flex-row h-full">
-            <div className="flex-1 p-8 relative z-10 flex flex-col justify-center">
-              <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-                Interactive 3D
-              </h2>
-              <p className="mt-4 text-neutral-300 max-w-lg">
-                Bring your UI to life with beautiful 3D scenes. Create immersive experiences
-                that capture attention and enhance your design.
-              </p>
-            </div>
-
-            <div className="flex-1 relative">
-              <SplineScene
-                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                className="w-full h-full"
-              />
-            </div>
-          </div>
-        </Card>
-      </div>
-    </div>
+    </>
   );
 }
